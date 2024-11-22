@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+class Cylinder {
+   private int height;
+    private int radius;
+
+    //getter for height
+    public int getHeight(){
+        return height;
+    }
+    //setter for the height
+    public void setHeight(int height){
+        if (height>0){
+            this.height=height;
+        }else {
+            System.out.println("Enter a valid or positive number");
+        }
+    }
+
+    //getter for the radius---->
+    public int  getRadius(){
+        return radius;
+    }
+    //getter for the radius----->>
+    public void setRadius(int radius){
+        if (radius>0){
+            this.radius=radius;
+        }else {
+            System.out.println("enter  a valid number or a positive number");
+        }
+    }
+
+    //setting the formulas for the area and the volume --->
+public double calSurafaceArea(){
+        return 3.14*radius*radius*height;
+}
+public double calVolume(){
+        return (3.14*radius*radius*height)+(2*3.14*radius*height);
+}
+    //NOW THE MAIN PROGRAM STARTS HERE--->>
+}
+public class Main {
+    public static void main(String[] args) {
+        Cylinder cylin = new Cylinder();
+        Scanner sc=new Scanner(System.in);
+
+        System.out.println("enter height and radius of the cylinder");
+        int userheight=sc.nextInt();
+        int userradius=sc.nextInt();
+
+        cylin.setHeight(userheight);
+        cylin.setRadius(userradius);
+        System.out.println(cylin.getRadius());
+        System.out.println(cylin.getHeight());
+        System.out.println(cylin.calSurafaceArea());
+        System.out.println(cylin.calVolume());
+    }
+}
